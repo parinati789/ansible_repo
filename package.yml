@@ -1,0 +1,15 @@
+---
+- name: create a package
+  hosts: all
+  tasks:
+    - name: useradd
+      user:
+        name: parinati
+        uid: 4400
+        state: present
+    - name: software
+      package: 
+        name: yum
+        state: present
+
+
