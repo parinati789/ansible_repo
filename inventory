@@ -1,0 +1,12 @@
+[dev]
+node1
+node2
+
+[prod]
+node3
+node4
+
+[webserver]
+node2
+node4
+
