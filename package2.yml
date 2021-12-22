@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: web server is enabled
+      service:
+        name: httpd
+        enabled: true
+    - name: NTP server is enabled
+      service:
+        name: chronyd
+        enabled: true
+    - name: Postfix is enabled
+      service: 
+        name: postfix
+        enabled: true
+

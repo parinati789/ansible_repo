@@ -1,0 +1,24 @@
+---
+- name: to start webserver
+  hosts: all
+  tasks:
+    - name: install package
+      package:
+        name: httpd
+        state: present
+    - name: start services
+      service:
+        name: httpd
+        state: started
+        enabled: true
+      notify: restart httpd
+    - name:  copying index.html file
+      copy:
+        src: /ansible/ansible_repo/index.html
+        dest: /var/www/html/index.html
+  handlers:
+    - name: restart httpd
+      service: 
+        name: httpd
+        state: restart
+    
